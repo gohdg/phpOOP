@@ -1,5 +1,6 @@
 <?php
-include_once "includes/person.inc.php"; ?>
+
+include "includes/autoloader.inc.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,8 +12,13 @@ include_once "includes/person.inc.php"; ?>
 </head>
 <body>
     <?php
-    $person01 = new Person("Daniel", "Blue", 28);
-    echo $person01->getDA();
+    $person1 = new Person\Person("Daniel", 28);
+    echo $person1->getPerson();
+
+    echo "<br>";
+
+    $house1 = new House("Johndoeroad", 12);
+    echo $house1->getAddress();
     ?>
 </body>
 </html>
