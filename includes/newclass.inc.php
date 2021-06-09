@@ -3,11 +3,25 @@
 class NewClass
 {
   //property and methods go here
-  public $info = "This is some info";
-  public $info1 = "This is some info";
-}
+  private $data = "I am a property";
 
-$object = new NewClass();
-echo "<pre>";
-var_dump($object);
-echo "</pre>";
+  public function __construct()
+  {
+    echo "This class has been instantiated <br>";
+  }
+
+  public function setNewProperty($newdata)
+  {
+    $this->data = $newdata;
+  }
+
+  public function getProperty()
+  {
+    return $this->data;
+  }
+
+  public function __destruct()
+  {
+    echo "<br> This is the end of the class!";
+  }
+}

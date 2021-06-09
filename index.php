@@ -1,5 +1,5 @@
 <?php
-include_once "includes/person.inc.php"; ?>
+include_once "includes/newclass.inc.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,10 +11,9 @@ include_once "includes/person.inc.php"; ?>
 </head>
 <body>
     <?php
-    $person1 = new Person("Daniel", "blue", 24);
-    $person2 = new Person("Timmy", "brown", 33);
-
-    echo $person1->getName();
+    $object = new NewClass();
+    unset($object);
+    echo $object->getProperty();
     ?>
 </body>
 </html>
