@@ -1,5 +1,5 @@
 <?php
-
+// declare(strict_types=1);
 include "includes/autoloader.inc.php"; ?>
 
 <!DOCTYPE html>
@@ -12,13 +12,14 @@ include "includes/autoloader.inc.php"; ?>
 </head>
 <body>
     <?php
-    $person1 = new Person\Person("Daniel", 28);
-    echo $person1->getPerson();
+    $person1 = new Person();
 
-    echo "<br>";
-
-    $house1 = new House("Johndoeroad", 12);
-    echo $house1->getAddress();
+    try {
+      $person1->setName(2);
+      echo $person1->getName();
+    } catch (TypeError $e) {
+      echo "Error!: " . $e->getMessage();
+    }
     ?>
 </body>
 </html>
